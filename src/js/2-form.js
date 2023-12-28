@@ -8,7 +8,7 @@ formRef.addEventListener('input', handleSaveFormValue);
 formRef.addEventListener('submit', handleClearLS);
 checkLS();
 
-function handleSaveFormValue(event) {
+function handleSaveFormValue() {
   const emailValue = input.value;
   const messageValue = textarea.value;
   const object = {

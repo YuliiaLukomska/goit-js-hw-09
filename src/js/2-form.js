@@ -12,23 +12,27 @@ function handleSaveFormValue(event) {
   const emailValue = input.value;
   const messageValue = textarea.value;
   const object = {
-    email: emailValue,
-    message: messageValue,
+    email: emailValue.trim(),
+    message: messageValue.trim(),
   };
   localStorage.setItem(LS_KEY, JSON.stringify(object));
 }
 
 function handleClearLS(event) {
   event.preventDefault();
-  console.log(JSON.parse(localStorage.getItem(LS_KEY)));
-  localStorage.removeItem(LS_KEY);
-  event.currentTarget.reset();
+  if (input.value.trim() === '' || textarea.value.trim() === '') {
+    alert('Please, fill in all fields');
+  } else {
+    console.log(JSON.parse(localStorage.getItem(LS_KEY)));
+    localStorage.removeItem(LS_KEY);
+    event.currentTarget.reset();
+  }
 }
 
 function checkLS() {
-  const lSObject = JSON.parse(localStorage.getItem(LS_KEY));
+  const lSObject = localStorage.getItem(LS_KEY);
   if (lSObject) {
-    input.value = lSObject.email;
-    textarea.value = lSObject.message;
+    input.value = JSON.parse(lSObject).email;
+    textarea.value = JSON.parse(lSObject).message;
   }
 }

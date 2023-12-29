@@ -1,5 +1,5 @@
-import SimpleLightbox from `simplelightbox`;
-import 'simplelightbox/dist/simple-lightbox.min.css';
+// import SimpleLightbox from 'simplelightbox';
+// import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
   {
@@ -79,6 +79,6 @@ function createMarkUp(arr) {
     .join('');
 }
 
-let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-
-// 
+// let lightbox = new SimpleLightbox('.gallery a', {
+//   /* options */
+// });

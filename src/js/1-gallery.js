@@ -80,3 +80,5 @@ function createMarkUp(arr) {
 }
 
 let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+
+// 
